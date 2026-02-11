@@ -9,16 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        //
-    }
+   public function up(): void
+{
+    Schema::create('especies', function (Blueprint $table) {
+        $table->id('id_especie');
+        $table->string('nombre', 30);
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('especies');
     }
 };
